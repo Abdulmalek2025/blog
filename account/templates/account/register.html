@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Signup{% endblock title %}
+{% block content %}
+<h3>Register</h3>
+<form method="post" novalidate enctype="multipart/form-data" action="{% url 'register' %}">
+{{form.as_p}}
+{{profile_form.as_p}}
+{% csrf_token %}
+<input type="submit" value="register">
+
+</form>
+
+{% endblock content %}
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<section class="page-header">
+    <div class="container-xl">
+        <div class="text-center">
+            <h1 class="mt-0 mb-2">{{object_list.0.category}}</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{object_list.0.category}}</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</section>
+<section class="main-content">
+    <div class="container-xl">
+
+        <div class="row gy-4">
+
+{% include './parts/article_list.html' %}
+{% include './parts/sidebar.html' %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

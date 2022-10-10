@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_field %}
+{% block title %}create{% endblock title %}
+{% block content %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<form method="POST" class="m-3" enctype="multipart/form-data">
+    
+    <!-- Security token -->
+    {% csrf_token %}
+        {{form.media}}
+   
+    <!-- Using the formset -->
+    {{ form|crispy }}
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+{% endblock content %}

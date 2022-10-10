@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+
+{% block content %}
+{% include './parts/hero.html' %}
+<section class="main-content">
+    <div class="container-xl">
+
+        <div class="row gy-4">
+
+            <div class="col-lg-8">
+
+{% include './parts/trending.html' %}
+{% include './parts/inspiration.html' %}
+            </div>
+            
+                {% include './parts/sidebar.html' %}
+        </div>
+
+    </div>
+</section>
+{% endblock content %}

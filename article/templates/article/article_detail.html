@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}list{% endblock title %}
+{% block content %}
+<section class="main-content mt-3">
+    <div class="container-xl">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Inspiration</a></li>
+                <li class="breadcrumb-item active" aria-current="page">3 Easy Ways To Make Your iPhone Faster</li>
+            </ol>
+        </nav>
+
+        <div class="row gy-4">
+
+            <div class="col-lg-8">
+                {% include './parts/single_article.html' %}
+                {% include './parts/author.html' %}
+                {% include './parts/comments.html' %}
+                {% include './parts/comment_form.html' %}
+            </div>
+            {% include './parts/sidebar.html' %}
+        </div>
+    </div>
+</section>
+{% endblock content %}

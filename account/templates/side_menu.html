@@ -1,18 +1,20 @@
 {% load static %}
+{% load i18n %}
 <div class="search-popup">
     <!-- close button -->
     <button type="button" class="btn-close" aria-label="Close"></button>
     <!-- content -->
     <div class="search-content">
         <div class="text-center">
-            <h3 class="mb-4 mt-0">Press ESC to close</h3>
+            <h3 class="mb-4 mt-0">{% trans "Press ESC to close" %}</h3>
         </div>
         <!-- form -->
         <form action="{% url 'article:search' %}" class="d-flex search-form">
-            <input name="search" class="form-control me-2" type="search" placeholder="Search and press enter ..."
+            <input name="search" class="form-control me-2" type="search" placeholder="{% trans "Search and press enter ..." %}"
                 aria-label="Search">
             <button class="btn btn-default btn-lg" type="submit"><i class="icon-magnifier"></i></button>
         </form>
+        
     </div>
 </div>
 
@@ -29,17 +31,23 @@
     <!-- menu -->
     <nav>
         <ul class="vertical-menu">
-            <li class="active"><a href="{% url 'article:index' %}">Home</a></li>
+            <li class="active"><a href="{% url 'article:index' %}">{% trans "Home" %}</a></li>
             <li>
-                <a href="index.html">Category</a>
+                <a href="index.html">{% trans "Category" %}</a>
                 <ul class="submenu">
                     {% for category in categories %}
-                    <li><a href="{% url 'article:category' category.name %}">{{category.name}}</a></li>
+                    <li><a href="{% url 'article:category' %}?category={{category.name}}">{{category.name}}</a></li>
 
                     {% endfor %}                    
                 </ul>
             </li>
-            <li><a href="contact.html">Contact</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'logout' %}">{% trans "Logout" %}</a></li>
+            {% else %}
+                <li><a href="{% url 'register' %}">{% trans "Register" %}</a></li>
+                <li><a href="{% url 'loging' %}">{% trans "Login" %}</a></li>
+            {% endif %}
+            <li><a href="contact.html">{% trans "Contact" %}</a></li>
         </ul>
     </nav>
 

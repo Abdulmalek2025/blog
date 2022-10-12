@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <header class="header-default">
     <nav class="navbar navbar-expand-lg">
         <div class="container-xl">
@@ -9,29 +10,42 @@
                 <!-- menus -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'article:index' %}">Home</a>
+                        <a class="nav-link" href="{% url 'article:index' %}">{% trans "Home" %}</a>
                     </li>
                     <li class="nav-item dropdown ">
-                        <a class="nav-link dropdown-toggle" href="{% url 'article:index' %}">Categories</a>
+                        <a class="nav-link dropdown-toggle" href="{% url 'article:index' %}">{% trans "Categories" %}</a>
                         <ul class="dropdown-menu">
                             {% for category in categories %}
-                            <li><a class="dropdown-item" href="{% url 'article:category' category.name %}">{{category.name}}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'article:category' %}?category={{category.name}}">{{category.name}}</a></li>
                             {% endfor %}
                             
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.html">{% trans "Contact" %}</a>
                     </li>
                     {% if request.user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'logout' %}">{% trans "Logout" %}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'article:mine' %}">{% trans "My Articles" %}</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'login' %}">{% trans "Login" %}</a>
                     </li>
                     {% endif %}
+                    <li><form action="{% url 'set_language' %}" method="post">
+                        {% get_current_language as LANGUAGE_CODE %}
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}" >
+                        {% if LANGUAGE_CODE == 'en' %}
+                        <button class="btn btn-primary px-4" type="submit" value="ar" name="language"><span class="text-black">ar</span></btton>
+                        {% elif LANGUAGE_CODE == 'ar' %}
+                        <button class="btn btn-primary px-4" type="submit" value="en" name="language"><span class="text-black">en</span></button>
+                        {% endif %}
+                      </form></li>
                 </ul>
             </div>
 

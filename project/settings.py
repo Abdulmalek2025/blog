@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,16 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'parler',
     'ckeditor',
     'crispy_forms',
     'article',
     'ckeditor_uploader',
     'easy_thumbnails',
+    
 ]
+SITE_ID = 1
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -116,7 +120,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -124,10 +128,33 @@ USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+    ('ar', ('Arabic')),
+    ('en', ('English'))
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR,"locale")
+]
+
+PARLER_DEFAULT_ACTIVATE = False
+
+PARLER_DEFAULT_LANGUAGE_CODE = 'ar'
+
+PARLER_LANGUAGES = {
+    1: (
+        {'code': 'en',}, # English
+        {'code': 'ar',}, # Arabic
+    ),
+    'default': {
+        'fallbacks': ['ar'],
+        'hide_untranslated': False,
+    }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
-import os
+
 STATIC_URL = 'static/'
 # STATIC_ROOT = os.path.join(BASE_DIR,'static/')
 STATICFILES_DIRS = (

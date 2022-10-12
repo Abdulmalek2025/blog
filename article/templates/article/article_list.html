@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load i18n %}
 
 
 {% block content %}
@@ -9,7 +9,7 @@
             <h1 class="mt-0 mb-2">{{object_list.0.category}}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">{% trans "Home" %}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{object_list.0.category}}</li>
                 </ol>
             </nav>

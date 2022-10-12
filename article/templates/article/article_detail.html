@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
-
-{% block title %}list{% endblock title %}
+{% load i18n %}
+{% block title %}{{article.title}}{% endblock title %}
 {% block content %}
 <section class="main-content mt-3">
     <div class="container-xl">
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Inspiration</a></li>
-                <li class="breadcrumb-item active" aria-current="page">3 Easy Ways To Make Your iPhone Faster</li>
+                <li class="breadcrumb-item"><a href="#">{% trans "Home" %}</a></li>
+                <li class="breadcrumb-item"><a href="#">{{article.category}}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{article.title}}</li>
             </ol>
         </nav>
 

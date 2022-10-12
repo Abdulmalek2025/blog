@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
-{% load i18n %}
-{% block title %}{% trans "search" %}{% endblock title %}
+{% block title %}{% trans "My Articles" %}{% endblock title %}
+
 
 {% block content %}
 <section class="page-header">
     <div class="container-xl">
         <div class="text-center">
-            <h1 class="mt-0 mb-2">{% trans "Search Result:" %} "{{keyword}}"</h1>
+            <h1 class="mt-0 mb-2">{{request.user}}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="#">{% trans "Home" %}</a></li>
@@ -21,7 +21,7 @@
 
         <div class="row gy-4">
 
-{% include './parts/search_list.html' %}
+{% include './parts/mine_list.html' %}
 {% include './parts/sidebar.html' %}
         </div>
     </div>

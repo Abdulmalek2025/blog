@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-12 10:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: account/templates/base.html:7 account/templates/navbar.html:13
+#: account/templates/side_menu.html:34
+#: article/templates/article/article_detail.html:10
+#: article/templates/article/article_list.html:12
+#: article/templates/article/article_user.html:12
+#: article/templates/article/index.html:4
+#: article/templates/article/search_result.html:12
+msgid "Home"
+msgstr "الرئيسية"
+
+#: account/templates/navbar.html:16 article/models.py:20
+msgid "Categories"
+msgstr "الأقسام"
+
+#: account/templates/navbar.html:25 account/templates/side_menu.html:50
+msgid "Contact"
+msgstr "تواصل معنا"
+
+#: account/templates/navbar.html:29 account/templates/side_menu.html:45
+msgid "Logout"
+msgstr "تسجيل الخروج"
+
+#: account/templates/navbar.html:32
+#: article/templates/article/article_user.html:2
+#, fuzzy
+#| msgid "Articles"
+msgid "My Articles"
+msgstr "مقالاتي"
+
+#: account/templates/navbar.html:36 account/templates/side_menu.html:48
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: account/templates/side_menu.html:9
+msgid "Press ESC to close"
+msgstr "اضغط ESC للاغلاق"
+
+#: account/templates/side_menu.html:13
+msgid "Search and press enter ..."
+msgstr "ابحث"
+
+#: account/templates/side_menu.html:36 article/models.py:19
+msgid "Category"
+msgstr "قسم"
+
+#: account/templates/side_menu.html:47
+msgid "Register"
+msgstr "إنشاء حساب"
+
+#: article/models.py:40
+msgid "Article"
+msgstr "مقال"
+
+#: article/models.py:41
+msgid "Articles"
+msgstr "المقالات"
+
+#: article/models.py:61
+msgid "Comment"
+msgstr "تعليق"
+
+#: article/models.py:62 article/templates/article/parts/comments.html:7
+msgid "Comments"
+msgstr "تعليقات"
+
+#: article/templates/article/article_delete_confirm.html:3
+msgid "confirm"
+msgstr "تأكيد"
+
+#: article/templates/article/article_delete_confirm.html:7
+msgid "Are you sure to delete this article"
+msgstr "هل انت متأكد من حذف المقال؟"
+
+#: article/templates/article/article_delete_confirm.html:9
+msgid "Confirm"
+msgstr "تأكيد"
+
+#: article/templates/article/article_form.html:5
+msgid "Form"
+msgstr "نموذج"
+
+#: article/templates/article/parts/comment_form.html:8
+#, fuzzy
+#| msgid "Comment"
+msgid "Leave Comment"
+msgstr "تعليق"
+
+#: article/templates/article/parts/comment_form.html:20
+msgid "Submit"
+msgstr "متابعة"
+
+#: article/templates/article/parts/hero.html:38
+msgid "Popular"
+msgstr "الأكثر شيوعا"
+
+#: article/templates/article/parts/hero.html:42
+msgid "Recent"
+msgstr "الحديثة"
+
+#: article/templates/article/parts/inspiration.html:6
+msgid "Inspiration"
+msgstr "أفكار"
+
+#: article/templates/article/parts/sidebar.html:31
+msgid "Explore Topics"
+msgstr "اكتشف اكثر"
+
+#: article/templates/article/parts/sidebar.html:52
+msgid "Join 70,000 subscribers!"
+msgstr "70000 مشترك"
+
+#: article/templates/article/parts/sidebar.html:58
+msgid "Sign Up"
+msgstr "تسجيل الدخول"
+
+#: article/templates/article/parts/sidebar.html:60
+msgid "By signing up, you agree to our"
+msgstr "من خلال تسجيل الدخول انت توافق على "
+
+#: article/templates/article/parts/sidebar.html:61
+msgid "Privacy Policy"
+msgstr "شروط الخصوصية"
+
+#: article/templates/article/parts/sidebar.html:69
+msgid "Sponsored Ad"
+msgstr "إعلان"
+
+#: article/templates/article/parts/sidebar.html:78
+msgid "Tag Clouds"
+msgstr "كلمات مفتاحية"
+
+#: article/templates/article/parts/single_article.html:13
+msgid "Update"
+msgstr "تعديل"
+
+#: article/templates/article/parts/single_article.html:14
+msgid "Delete"
+msgstr "حذف"
+
+#: article/templates/article/parts/trending.html:6
+msgid "Trending"
+msgstr "الاكثر شيوعا"
+
+#: article/templates/article/search_result.html:3
+msgid "search"
+msgstr "بحث"
+
+#: article/templates/article/search_result.html:9
+msgid "Search Result:"
+msgstr "نتيجة البحث"
